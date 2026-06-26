@@ -193,7 +193,7 @@ export default function LandingPage() {
             <div className="flex flex-col md:flex-row gap-8 md:justify-end text-sm text-zinc-600">
               <div className="pt-4 md:pt-0 border-t md:border-t-0 border-zinc-900">
                 <p>&copy; 2026 GrantOS. All rights reserved.</p>
-                <p className="mt-1">Built by <a href="https://twitter.com/khalidx_dev" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">The Web3 Wizard</a></p>
+                <p className="mt-1">Built by <a href="https://x.com/theweb3wizard00" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">The Web3 Wizard</a></p>
               </div>
             </div>
           </div>

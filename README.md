@@ -186,6 +186,6 @@ I'm a frontend-focused Web3 developer who bridges the gap between intimidating b
 
 **My stack:** React · Next.js · TypeScript · Tailwind CSS · ethers.js · wagmi · Solidity
 
-Before writing code full-time, I spent years demystifying blockchain as **[The Web3 Wizard](https://twitter.com/khalidx_dev)**. That background gave me a sharp eye for the exact moments where users get confused, scared, or lost. Now I eliminate those moments at the interface level.
+Before writing code full-time, I spent years demystifying blockchain as **[The Web3 Wizard](https://x.com/theweb3wizard00)**. That background gave me a sharp eye for the exact moments where users get confused, scared, or lost. Now I eliminate those moments at the interface level.
 
 📩 Open to freelance contracts, project-based work, and full-time roles.
