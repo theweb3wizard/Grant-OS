@@ -1,0 +1,24 @@
+# GrantOS Pricing
+
+**GrantOS is completely free.** There are no paid plans, no subscriptions, and no hidden fees.
+
+## Why is it free?
+GrantOS was built as a demonstration of modern Web3 tooling. It is intentionally designed without:
+- Billing infrastructure
+- Payment processing
+- Subscription tiers
+- Usage limits
+- Account requirements
+
+## What's included
+All features are available at no cost:
+- Grant calendar with deadline tracking
+- AI-powered draft generation (optional Groq key; manual fallback always works)
+- Kanban application tracker
+- Reporting milestone reminders
+- Project profile management
+
+## Data Privacy
+All data is stored locally on your device using the browser's localStorage. No data is ever sent to a server (except optional Groq API calls for AI draft generation, if you provide your own API key).
+
+There is no signup, no login, and no account creation required.

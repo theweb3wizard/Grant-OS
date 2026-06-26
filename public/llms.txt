@@ -1,0 +1,32 @@
+# GrantOS
+> The operating system for Web3 grants. Track ecosystem rounds, generate tailored applications with AI, and manage reporting milestones.
+
+## Key Pages
+- Landing: https://grantos.io/
+- Onboarding: https://grantos.io/onboarding
+- Grant Calendar: https://grantos.io/dashboard/grants
+- Application Tracker: https://grantos.io/dashboard/tracker
+- Settings: https://grantos.io/dashboard/settings
+
+## About
+GrantOS is a free, client-side Web3 grant CRM. All data stays on the user's device via localStorage — no account required. Supports Ethereum, Solana, Arbitrum, Optimism, Base, and other L2 ecosystems.
+
+## Features
+- **Grant Calendar**: Browse 5 active grant programs across ecosystems with deadline tracking
+- **AI Draft Generator**: Paste your project description once, get committee-specific application drafts via Groq AI (optional; manual editor fallback always available)
+- **Application Tracker**: Kanban board to move applications through draft→submitted→under review→won/lost pipeline
+- **Reporting Milestones**: Set automated reminders when an application is won
+- **Project Profile**: Save project details (category, chains, metrics) that seed all AI drafts
+
+## Technical Stack
+- Framework: Next.js (React, Server Components)
+- Data: localStorage (no server-side persistence)
+- AI: Groq API (Llama 3) — optional, key not required
+- Styling: Tailwind CSS, shadcn/ui components
+- Fonts: Geist (Sans + Mono)
+
+## Pricing
+GrantOS is completely free and open source. There are no paid tiers, no subscriptions, and no hidden costs. The project was intentionally built without billing infrastructure.
+
+## Support
+This is an open source project. Report issues or contribute at the GitHub repository.
