@@ -4,7 +4,7 @@
 
 GrantOS is a full-featured grant management CRM built for Web3 teams navigating Optimism, Arbitrum, Base, Solana, and Ethereum grant programs. It replaces spreadsheets and scattered tabs with a purpose-built interface for the entire grant lifecycle — from discovery through application to reporting.
 
-**[Live Demo](https://grantos.vercel.app) · [Report Bug](https://github.com/theweb3wizard/Grant-OS/issues) · [Request Feature](https://github.com/theweb3wizard/Grant-OS/issues)**
+**[Live Demo](https://grantos-hq.vercel.app) · [Report Bug](https://github.com/theweb3wizard/Grant-OS/issues) · [Request Feature](https://github.com/theweb3wizard/Grant-OS/issues)**
 
 ---
 
