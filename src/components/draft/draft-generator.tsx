@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
+import type { ProjectProfile } from '@/lib/store'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -9,19 +10,17 @@ import { Sparkles, Copy, Save, ArrowLeft, Loader2, PenLine } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useToast } from '@/hooks/use-toast'
 import { updateApplicationDraft } from '@/lib/store'
-import { getProfile } from '@/lib/store'
 import { GRANTS } from '@/lib/grants-data'
 
 interface DraftGeneratorProps {
   applicationId: string
   grantName: string
-  profile: any
+  profile: ProjectProfile
 }
 
 export function DraftGenerator({ applicationId, grantName, profile }: DraftGeneratorProps) {
   const [content, setContent] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
-  const [isAiAvailable, setIsAiAvailable] = useState(true)
   const [useManualEditor, setUseManualEditor] = useState(false)
   const [saved, setSaved] = useState(false)
   const { toast } = useToast()
@@ -30,7 +29,6 @@ export function DraftGenerator({ applicationId, grantName, profile }: DraftGener
 
   const handleGenerate = async () => {
     setIsGenerating(true)
-    setIsAiAvailable(true)
     setUseManualEditor(false)
 
     try {
@@ -56,14 +54,12 @@ export function DraftGenerator({ applicationId, grantName, profile }: DraftGener
           variant: 'destructive',
         })
         setUseManualEditor(true)
-        setIsAiAvailable(false)
         setIsGenerating(false)
         return
       }
 
       if (!response.body) {
         setUseManualEditor(true)
-        setIsAiAvailable(false)
         setIsGenerating(false)
         return
       }
@@ -88,7 +84,6 @@ export function DraftGenerator({ applicationId, grantName, profile }: DraftGener
         variant: 'destructive',
       })
       setUseManualEditor(true)
-      setIsAiAvailable(false)
     } finally {
       setIsGenerating(false)
     }
@@ -106,7 +101,7 @@ export function DraftGenerator({ applicationId, grantName, profile }: DraftGener
     toast({ title: 'Copied', description: 'Draft copied to clipboard.' })
   }
 
-  const metricsArray = profile.metrics ? Object.entries(profile.metrics).filter(([_, v]: any) => v) : []
+  const metricsArray = profile.metrics ? Object.entries(profile.metrics).filter(([, v]) => v) : []
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -124,7 +119,7 @@ export function DraftGenerator({ applicationId, grantName, profile }: DraftGener
             <div>
               <span className="text-zinc-500 text-xs uppercase font-bold tracking-wider">Metrics</span>
               <div className="flex flex-wrap gap-2 mt-1">
-                {metricsArray.length > 0 ? metricsArray.map(([k, v]: any) => (
+                {metricsArray.length > 0 ? metricsArray.map(([k, v]) => (
                   <Badge key={k} variant="secondary" className="bg-zinc-800 border-zinc-700 text-zinc-400">
                     <span className="capitalize">{k.replace(/([A-Z])/g, ' $1')}</span>: {String(v)}
                   </Badge>

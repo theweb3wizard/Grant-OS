@@ -178,14 +178,14 @@ MIT — see [LICENSE](LICENSE).
 
 ---
 
-## 👨‍💻 About the Developer
+## 👨‍💻 About the Builder
 
-**I turn complex Web3 ideas into clean, wallet-connected dApps that anyone can use.**
+**Full-stack architect who ships end-to-end products — from concept to deployed application.**
 
-I'm a frontend-focused Web3 developer who bridges the gap between intimidating blockchain tech and smooth user experiences. Instead of just talking about simplicity, I build it — pixel by pixel, transaction by transaction.
+I design and build complete software systems: frontend, API layer, AI integration, deployment, and documentation. This project was architected with zero backend dependencies by design — all UI state is local, all data flows are synchronous, and the AI layer degrades gracefully when offline. Every component works, every edge case is handled, and the entire app deploys with a single click.
 
-**My stack:** React · Next.js · TypeScript · Tailwind CSS · ethers.js · wagmi · Solidity
+**My approach:** Architecture-first · State modeling · Component composition · AI integration · Zero‑config deployment
 
-Before writing code full-time, I spent years demystifying blockchain as **[The Web3 Wizard](https://x.com/theweb3wizard00)**. That background gave me a sharp eye for the exact moments where users get confused, scared, or lost. Now I eliminate those moments at the interface level.
+I work on project-based engagements — taking ideas from whiteboard to production, with or without a technical team.
 
-📩 Open to freelance contracts, project-based work, and full-time roles.
+📩 Open to freelance and project-based work.

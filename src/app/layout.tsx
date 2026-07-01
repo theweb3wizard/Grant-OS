@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     template: "%s | GrantOS"
   },
   description: "Track ecosystem rounds, generate tailored applications with AI, and never miss a reporting milestone. GrantOS is the free Web3 grant CRM for Ethereum, Solana, and L2 ecosystems.",
-  metadataBase: new URL("https://grantos.io"),
+  metadataBase: new URL("https://grantos-hq.vercel.app"),
   openGraph: {
     title: "GrantOS | Win More Web3 Grants",
     description: "Track ecosystem rounds, generate tailored applications with AI, and never miss a reporting milestone. Free Web3 grant CRM.",
-    url: "https://grantos.io",
+    url: "https://grantos-hq.vercel.app",
     siteName: "GrantOS",
     locale: "en_US",
     type: "website",
@@ -53,7 +53,7 @@ const jsonLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Track Web3 grant rounds, generate tailored applications with AI, and manage reporting milestones. Free grant CRM for Ethereum, Solana, and L2 ecosystems.",
-  url: "https://grantos.io",
+  url: "https://grantos-hq.vercel.app",
   offers: {
     "@type": "Offer",
     price: "0",

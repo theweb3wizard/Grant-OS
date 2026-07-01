@@ -15,7 +15,7 @@ export default function NotFound() {
         <h1 className="text-7xl font-bold text-zinc-800 font-mono mb-2 tracking-tighter">404</h1>
         <h2 className="text-2xl font-bold text-zinc-50 mb-3">Lost in the ecosystem?</h2>
         <p className="text-zinc-400 max-w-md mb-10 mx-auto leading-relaxed">
-          The page you're looking for doesn't exist. Let's get you back to tracking grants.
+          The page you are looking for does not exist. Let&apos;s get you back to tracking grants.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

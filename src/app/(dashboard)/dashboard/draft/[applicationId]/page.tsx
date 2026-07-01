@@ -1,32 +1,29 @@
 'use client'
 
-import { useState, useEffect, use } from 'react'
+import { useEffect, use } from 'react'
 import { useRouter } from 'next/navigation'
 import { DashboardHeader } from '@/components/layout/dashboard-header'
 import { DraftGenerator } from '@/components/draft/draft-generator'
 import { getApplicationsWithGrants, getProfile } from '@/lib/store'
 import { GRANTS } from '@/lib/grants-data'
+import type { ApplicationWithGrant } from '@/lib/store'
 
 export default function DraftPage({ params }: { params: Promise<{ applicationId: string }> }) {
   const { applicationId } = use(params)
-  const [data, setData] = useState<{ application: any; profile: any } | null>(null)
   const router = useRouter()
+  const apps: ApplicationWithGrant[] = getApplicationsWithGrants()
+  const app = apps.find((a) => a.id === applicationId)
+  const profile = getProfile()
 
   useEffect(() => {
-    const apps = getApplicationsWithGrants()
-    const app = apps.find((a: any) => a.id === applicationId)
-    if (!app) {
+    if (!app || !profile) {
       router.replace('/dashboard/tracker')
-      return
     }
-    const profile = getProfile()
-    setData({ application: app, profile })
-  }, [applicationId, router])
+  }, [app, profile, router])
 
-  if (!data) return null
+  if (!app || !profile) return null
 
-  const { application, profile } = data
-  const grant = GRANTS.find(g => g.id === application.grantId)
+  const grant = GRANTS.find(g => g.id === app.grantId)
 
   return (
     <div className="flex flex-col gap-4 min-h-screen">
@@ -37,7 +34,7 @@ export default function DraftPage({ params }: { params: Promise<{ applicationId:
         backHref="/dashboard/tracker"
       />
       <DraftGenerator
-        applicationId={application.id}
+        applicationId={app.id}
         grantName={grant?.name || 'Grant'}
         profile={profile}
       />

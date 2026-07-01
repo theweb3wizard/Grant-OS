@@ -136,21 +136,8 @@ export default function LandingPage() {
         <hr className="border-zinc-800" />
 
         <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-zinc-300 mb-12">Used by teams across Optimism, Arbitrum, and Base ecosystems</h2>
+          <h2 className="text-2xl font-bold text-zinc-300 mb-12">Tracked by teams across the ecosystem</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-            <TestimonialCard 
-              quote="GrantOS saved our team weeks of manual tracking. The AI drafts are incredibly nuanced and actually respect committee-specific priorities."
-              author="Alex Rivers"
-              role="Lead @ DeFi Protocol"
-            />
-            <TestimonialCard 
-              quote="Managing multiple L2 grants was a nightmare in spreadsheets. GrantOS's automated reminders ensure we never miss a reporting deadline."
-              author="Sarah Chen"
-              role="Grant Operations, L2 Infrastructure"
-            />
-          </div>
-
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
             {['Optimism', 'Arbitrum', 'Base', 'Solana', 'Ethereum'].map((name) => (
               <span key={name} className="text-xl font-mono font-bold text-zinc-500 uppercase tracking-widest">{name}</span>
@@ -227,17 +214,4 @@ function FaqItem({ question, answer }: { question: string, answer: string }) {
   )
 }
 
-function TestimonialCard({ quote, author, role }: { quote: string, author: string, role: string }) {
-  return (
-    <div className="p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30 text-left italic">
-      <p className="text-zinc-300 mb-6 leading-relaxed">&ldquo;{quote}&rdquo;</p>
-      <div className="not-italic flex items-center gap-3">
-        <div className="h-10 w-10 rounded-full bg-zinc-800 border border-zinc-700" />
-        <div>
-          <p className="text-sm font-bold text-zinc-100">{author}</p>
-          <p className="text-xs text-zinc-500">{role}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
+

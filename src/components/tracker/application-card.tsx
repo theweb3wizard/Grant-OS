@@ -35,23 +35,19 @@ import { Textarea } from '@/components/ui/textarea'
 import { useState } from 'react'
 import { updateApplicationStatus, updateApplicationNotes, deleteApplication } from '@/lib/store'
 import { useToast } from '@/hooks/use-toast'
+import { ECOSYSTEM_COLORS } from '@/lib/constants'
+import type { Application, ApplicationStatus, ApplicationWithGrant } from '@/lib/store'
 import { MilestoneManager } from './milestone-manager'
 import Link from 'next/link'
 
 interface ApplicationCardProps {
-  application: any
+  application: ApplicationWithGrant
   onRefresh: () => void
+  onDragStart?: () => void
+  onDragEnd?: () => void
 }
 
-const ECOSYSTEM_COLORS: Record<string, string> = {
-  Optimism: 'bg-red-900/30 text-red-400 border-red-900/50',
-  Arbitrum: 'bg-blue-900/30 text-blue-400 border-blue-900/50',
-  Base: 'bg-indigo-900/30 text-indigo-400 border-indigo-900/50',
-  Solana: 'bg-purple-900/30 text-purple-400 border-purple-900/50',
-  Ethereum: 'bg-zinc-800 text-zinc-300 border-zinc-700',
-}
-
-const NEXT_STATUS: Record<string, string | null> = {
+const NEXT_STATUS: Record<string, ApplicationStatus | null> = {
   interested: 'drafting',
   drafting: 'submitted',
   submitted: 'review',
@@ -60,15 +56,15 @@ const NEXT_STATUS: Record<string, string | null> = {
   lost: null,
 }
 
-export function ApplicationCard({ application, onRefresh }: ApplicationCardProps) {
+export function ApplicationCard({ application, onRefresh, onDragStart, onDragEnd }: ApplicationCardProps) {
   const { toast } = useToast()
   const nextStatus = NEXT_STATUS[application.status]
   const [isNotesOpen, setIsNotesOpen] = useState(false)
   const [notes, setNotes] = useState(application.notes || '')
   const [isSavingNotes, setIsSavingNotes] = useState(false)
 
-  const handleStatusUpdate = (status: string) => {
-    updateApplicationStatus(application.id, status as any)
+  const handleStatusUpdate = (status: Application['status']) => {
+    updateApplicationStatus(application.id, status)
     toast({ title: 'Success', description: `Moved to ${status}` })
     onRefresh()
   }
@@ -88,9 +84,14 @@ export function ApplicationCard({ application, onRefresh }: ApplicationCardProps
   }
 
   return (
-    <div className="group relative bg-zinc-800 border border-zinc-700 rounded-lg p-4 shadow-sm hover:border-zinc-600 transition-all">
+    <div
+      draggable
+      onDragStart={onDragStart}
+      onDragEnd={onDragEnd}
+      className="group relative bg-zinc-800 border border-zinc-700 rounded-lg p-4 shadow-sm hover:border-zinc-600 transition-all cursor-grab active:cursor-grabbing"
+    >
       <div className="flex justify-between items-start mb-3">
-        <Badge className={ECOSYSTEM_COLORS[application.grants?.ecosystem] || 'bg-zinc-900 text-zinc-400 border-zinc-800'}>
+        <Badge className={ECOSYSTEM_COLORS[application.grants?.ecosystem ?? 'Other'] || 'bg-zinc-900 text-zinc-400 border-zinc-800'}>
           {application.grants?.ecosystem || 'Unknown'}
         </Badge>
         

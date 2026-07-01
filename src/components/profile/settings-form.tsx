@@ -9,13 +9,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Checkbox } from '@/components/ui/checkbox'
 import { saveProfile } from '@/lib/store'
+import type { ProjectProfile } from '@/lib/store'
 import { useToast } from '@/hooks/use-toast'
 import { Save } from 'lucide-react'
 
 const CATEGORIES = ['DeFi', 'Infra', 'DevTools', 'PublicGoods', 'Other']
 const CHAINS = ['Ethereum', 'Solana', 'Arbitrum', 'Optimism', 'Base', 'Other']
 
-export function SettingsForm({ profile, onSaved }: { profile: any; onSaved: () => void }) {
+export function SettingsForm({ profile, onSaved }: { profile: ProjectProfile; onSaved: () => void }) {
   const [loading, setLoading] = useState(false)
   const [oneLiner, setOneLiner] = useState(profile?.oneLiner || '')
   const [description, setDescription] = useState(profile?.description || '')

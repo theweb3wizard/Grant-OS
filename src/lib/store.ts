@@ -1,3 +1,4 @@
+import type { Grant } from './grants-data'
 import { GRANTS } from './grants-data'
 
 const STORAGE_KEY = 'grantos-state'
@@ -26,6 +27,11 @@ export interface Application {
   notes: string | null
   createdAt: string
   updatedAt: string
+}
+
+export interface ApplicationWithGrant extends Application {
+  grants: Grant | null
+  milestones: Milestone[]
 }
 
 export interface Milestone {
@@ -79,7 +85,7 @@ export function getApplications(): Application[] {
   return load().applications
 }
 
-export function getApplicationsWithGrants() {
+export function getApplicationsWithGrants(): ApplicationWithGrant[] {
   const state = load()
   return state.applications.map(a => ({
     ...a,

@@ -31,18 +31,10 @@ import {
 } from '@/components/ui/dialog'
 import { useToast } from '@/hooks/use-toast'
 import { cn } from '@/lib/utils'
+import { ECOSYSTEM_COLORS } from '@/lib/constants'
 import { addApplication } from '@/lib/store'
 import { useRouter } from 'next/navigation'
 import type { Grant } from '@/lib/grants-data'
-
-const ECOSYSTEM_COLORS: Record<string, string> = {
-  Optimism: 'bg-red-900/30 text-red-400 border-red-900/50',
-  Arbitrum: 'bg-blue-900/30 text-blue-400 border-blue-900/50',
-  Base: 'bg-indigo-900/30 text-indigo-400 border-indigo-900/50',
-  Solana: 'bg-purple-900/30 text-purple-400 border-purple-900/50',
-  Ethereum: 'bg-zinc-800 text-zinc-300 border-zinc-700',
-  Other: 'bg-zinc-900 text-zinc-500 border-zinc-800',
-}
 
 export function GrantCalendar({ initialGrants }: { initialGrants: Grant[] }) {
   const [search, setSearch] = useState('')

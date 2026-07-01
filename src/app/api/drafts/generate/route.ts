@@ -14,7 +14,7 @@ export async function POST(req: Request) {
       )
     }
 
-    const metricsStr = metrics ? Object.entries(metrics).filter(([_, v]) => v).map(([k, v]) => `${k}: ${v}`).join('\n') : 'No metrics provided'
+    const metricsStr = metrics ? Object.entries(metrics).filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join('\n') : 'No metrics provided'
 
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',

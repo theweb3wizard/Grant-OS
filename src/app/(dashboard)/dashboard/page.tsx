@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -9,22 +9,16 @@ import {
   Clock, 
   ArrowRight, 
   Calendar as CalendarIcon,
-  Sparkles,
 } from 'lucide-react'
 import Link from 'next/link'
 import { formatDistanceToNow } from 'date-fns'
 import { DashboardHeader } from '@/components/layout/dashboard-header'
-import { getApplicationsWithGrants, getProfile, type ProjectProfile } from '@/lib/store'
+import { getApplicationsWithGrants, getProfile } from '@/lib/store'
 import { GRANTS } from '@/lib/grants-data'
 
 export default function DashboardOverview() {
-  const [profile, setProfile] = useState<ProjectProfile | null>(null)
-  const [applications, setApplications] = useState<ReturnType<typeof getApplicationsWithGrants>>([])
-
-  useEffect(() => {
-    setProfile(getProfile())
-    setApplications(getApplicationsWithGrants())
-  }, [])
+  const [profile] = useState(getProfile())
+  const [applications] = useState(getApplicationsWithGrants())
 
   const activeAppsCount = applications.filter(a => !['won', 'lost'].includes(a.status)).length
   const wonAppsCount = applications.filter(a => a.status === 'won').length
@@ -74,7 +68,7 @@ export default function DashboardOverview() {
             </Button>
           </div>
           <div className="space-y-3">
-            {recentApps.length > 0 ? recentApps.map((app: any) => (
+            {recentApps.length > 0 ? recentApps.map((app) => (
               <Card key={app.id} className="bg-zinc-900/50 border-zinc-800 hover:border-zinc-700 transition-colors">
                 <CardContent className="p-4 flex items-center justify-between">
                   <div className="space-y-1">
