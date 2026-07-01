@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   },
   description: "Track ecosystem rounds, generate tailored applications with AI, and never miss a reporting milestone. GrantOS is the free Web3 grant CRM for Ethereum, Solana, and L2 ecosystems.",
   metadataBase: new URL("https://grantos-hq.vercel.app"),
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/apple-touch-icon.svg",
+  },
   openGraph: {
     title: "GrantOS | Win More Web3 Grants",
     description: "Track ecosystem rounds, generate tailored applications with AI, and never miss a reporting milestone. Free Web3 grant CRM.",
@@ -27,11 +31,13 @@ export const metadata: Metadata = {
     siteName: "GrantOS",
     locale: "en_US",
     type: "website",
+    images: [{ url: "/icon.svg", width: 512, height: 512 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "GrantOS | Win More Web3 Grants",
     description: "Track ecosystem rounds, generate tailored applications with AI, and never miss a reporting milestone. Free Web3 grant CRM.",
+    images: ["/icon.svg"],
   },
   robots: {
     index: true,

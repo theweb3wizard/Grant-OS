@@ -9,6 +9,7 @@ import {
   Settings,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { Logo } from '@/components/ui/logo'
 
 const NAV_ITEMS = [
   { href: '/dashboard', label: 'Overview', icon: LayoutDashboard },
@@ -24,7 +25,7 @@ export function Sidebar({ projectName }: { projectName: string | undefined }) {
     <div className="hidden lg:flex h-screen w-60 flex-col bg-zinc-900 border-r border-zinc-800 fixed left-0 top-0 z-50">
       <div className="p-8">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="h-8 w-8 bg-cyan-400 rounded-lg flex items-center justify-center font-bold text-zinc-950 transition-transform group-hover:scale-110">G</div>
+          <Logo variant="mark" markSize={32} />
           <span className="font-mono text-2xl font-bold text-zinc-100">GrantOS</span>
         </Link>
       </div>

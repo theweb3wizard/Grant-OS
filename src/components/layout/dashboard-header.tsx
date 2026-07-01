@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { ChevronRight, ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Logo } from '@/components/ui/logo'
 import Link from 'next/link'
 
 interface DashboardHeaderProps {
@@ -19,7 +20,10 @@ export function DashboardHeader({ title, description, showBack, backHref, childr
   return (
     <div className="flex flex-col gap-6 mb-10">
       <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-600">
-        <Link href="/dashboard" className="hover:text-cyan-400 transition-colors">GrantOS</Link>
+        <Link href="/dashboard" className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
+          <Logo variant="mark" markSize={14} className="text-cyan-400" />
+          <span className="text-zinc-400">GrantOS</span>
+        </Link>
         <ChevronRight className="h-3 w-3" />
         <span className="text-zinc-400">{title}</span>
       </div>

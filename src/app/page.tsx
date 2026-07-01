@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Logo } from '@/components/ui/logo'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -67,8 +68,8 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-8">
-              <Link href="/" className="font-mono text-2xl font-bold text-cyan-400">
-                GrantOS
+              <Link href="/">
+                <Logo variant="horizontal" markSize={28} />
               </Link>
               <div className="hidden md:flex items-center gap-6 text-sm text-zinc-400">
                 <Link href="#features" className="hover:text-zinc-100 transition-colors">Features</Link>
@@ -170,8 +171,8 @@ export default function LandingPage() {
         <footer className="py-24 px-4 sm:px-6 lg:px-8 border-t border-zinc-800 bg-zinc-950">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-4">
-              <Link href="/" className="font-mono text-2xl font-bold text-cyan-400">
-                GrantOS
+              <Link href="/">
+                <Logo variant="horizontal" markSize={28} />
               </Link>
               <p className="text-zinc-500 text-sm max-w-xs">
                 The operating system for Web3 grants. Win more, track better, stay reporting-ready.

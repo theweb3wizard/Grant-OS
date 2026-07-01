@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, LayoutDashboard, Calendar, Kanban, Settings } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { Logo } from '@/components/ui/logo'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet'
 
 const NAV_ITEMS = [
@@ -21,8 +22,8 @@ export function MobileNav({ projectName }: { projectName: string | undefined }) 
 
   return (
     <div className="lg:hidden flex items-center justify-between h-16 px-4 border-b border-zinc-800 bg-zinc-950 sticky top-0 z-40">
-      <Link href="/dashboard" className="font-mono text-xl font-bold text-cyan-400">
-        GrantOS
+      <Link href="/dashboard">
+        <Logo variant="horizontal" markSize={24} />
       </Link>
 
       <Sheet open={open} onOpenChange={setOpen}>
@@ -34,7 +35,7 @@ export function MobileNav({ projectName }: { projectName: string | undefined }) 
         <SheetContent side="left" className="bg-zinc-900 border-zinc-800 p-0 w-72">
           <div className="p-6 border-b border-zinc-800">
             <SheetTitle className="font-mono text-2xl font-bold text-cyan-400">
-              GrantOS
+              <Logo variant="horizontal" markSize={24} />
             </SheetTitle>
           </div>
           <nav className="flex-1 px-4 py-6 space-y-2">
